@@ -1,4 +1,4 @@
-package com.fxyh.spring.model;
+package com.fxyh.my.model;
 
 import java.io.Serializable;
 

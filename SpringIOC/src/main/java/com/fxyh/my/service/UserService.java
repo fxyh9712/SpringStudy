@@ -1,6 +1,6 @@
-package com.fxyh.spring.service;
+package com.fxyh.my.service;
 
-import com.fxyh.spring.model.User;
+import com.fxyh.my.model.User;
 
 /**
  * @ClassName: UserService

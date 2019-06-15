@@ -1,6 +1,6 @@
-package com.fxyh.spring.dao;
+package com.fxyh.my.dao;
 
-import com.fxyh.spring.model.User;
+import com.fxyh.my.model.User;
 
 /**
  * @ClassName: UserDao

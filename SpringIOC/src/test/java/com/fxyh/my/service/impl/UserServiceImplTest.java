@@ -1,11 +1,9 @@
-package com.fxyh.spring.service.impl;
+package com.fxyh.my.service.impl;
 
-import com.fxyh.spring.model.User;
-import com.fxyh.spring.service.UserService;
+import com.fxyh.my.model.User;
+import com.fxyh.my.service.UserService;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class UserServiceImplTest {
 

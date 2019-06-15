@@ -1,7 +1,7 @@
-package com.fxyh.spring.dao.impl;
+package com.fxyh.my.dao.impl;
 
-import com.fxyh.spring.dao.UserDao;
-import com.fxyh.spring.model.User;
+import com.fxyh.my.dao.UserDao;
+import com.fxyh.my.model.User;
 
 /**
  * @ClassName: UserDaoHibernateImpl

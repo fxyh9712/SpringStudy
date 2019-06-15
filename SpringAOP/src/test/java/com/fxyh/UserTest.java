@@ -1,6 +1,6 @@
 package com.fxyh;
 
-import com.fxyh.spring.model.User;
+import com.fxyh.my.model.User;
 import org.junit.Test;
 
 /**
