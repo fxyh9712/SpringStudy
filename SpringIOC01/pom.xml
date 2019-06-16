@@ -9,9 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>SpringAOP</artifactId>
+    <artifactId>SpringIOC01</artifactId>
 
-    <name>SpringAOP</name>
+    <name>SpringIOC01</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
