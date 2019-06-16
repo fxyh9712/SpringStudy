@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+    <bean id="userDaoHibernate" class="com.fxyh.spring.dao.impl.UserDaoHibernateImpl" />
+
+    <bean id="userDaoMybatis" class="com.fxyh.spring.dao.impl.UserDaoMybatisImpl"/>
+
+    <bean id="userService" class="com.fxyh.spring.service.impl.UserServiceImpl">
+        <property name="userDao" ref="userDaoMybatis" />
+    </bean>
+</beans>
