@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" default-lazy-init="true">
+
+    <bean id="lazyInitDemo1" class="com.fxyh.bean.LazyInitDemo1" lazy-init="default">
+        <property name="id" value="1"/>
+        <property name="name" value="zhangsan"/>
+    </bean>
+
+    <bean id="lazyInitDemo2" class="com.fxyh.bean.LazyInitDemo2" lazy-init="false">
+        <property name="id" value="2"/>
+        <property name="name" value="lisi"/>
+    </bean>
+
+    <bean id="lazyInitDemo3" class="com.fxyh.bean.LazyInitDemo3" lazy-init="true">
+        <property name="id" value="3"/>
+        <property name="name" value="wangwu"/>
+    </bean>
+</beans>
