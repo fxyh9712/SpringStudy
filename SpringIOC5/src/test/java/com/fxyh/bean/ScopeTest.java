@@ -30,7 +30,7 @@ public class ScopeTest {
 
     @Test
     public void test(){
-        System.out.println(scopeSingleton1 == scopeSingleton2);
-        System.out.println(scopePrototype1 == scopePrototype2);
+        System.out.println(scopeSingleton1 == scopeSingleton2);//true
+        System.out.println(scopePrototype1 == scopePrototype2);//false
     }
 }
