@@ -3,6 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="initDemo1" class="com.fxyh.bean.InitDemo1" init-method="init" destroy-method="destroy" />
+    <bean id="initDemo1" class="com.fxyh.bean.InitDemo1" init-method="myInit" destroy-method="myDestroy" />
 
 </beans>
