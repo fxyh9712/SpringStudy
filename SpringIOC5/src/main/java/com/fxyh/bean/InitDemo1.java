@@ -16,7 +16,7 @@ import java.io.Serializable;
  * @Version 1.0
  **/
 
-public class InitDemo1 implements Serializable, BeanNameAware, ApplicationContextAware, BeanFactoryAware, BeanPostProcessor, InitializingBean, DisposableBean {
+public class InitDemo1 implements Serializable, BeanNameAware, ApplicationContextAware, BeanFactoryAware, InitializingBean, DisposableBean {
     private static final long serialVersionUID = -2167328278489217537L;
 
     public InitDemo1() {
@@ -45,13 +45,13 @@ public class InitDemo1 implements Serializable, BeanNameAware, ApplicationContex
         System.out.println("setBeanFactory:" + beanFactory + "调用！");
     }
 
-    @Override
+//    @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("postProcessBeforeInitialization: beanName=" + beanName);
         return bean;
     }
 
-    @Override
+//    @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("postProcessAfterInitialization: beanName=" + beanName);
         return bean;
