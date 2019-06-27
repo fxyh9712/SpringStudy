@@ -17,7 +17,8 @@ import java.io.Serializable;
  **/
 
 public class InitDemo2 implements Serializable,BeanPostProcessor{
-    private static final long serialVersionUID = -2167328278489217537L;
+
+    private static final long serialVersionUID = 5867932081615656754L;
 
     public InitDemo2() {
         System.out.println("InitDemo2构造方法调用！");
