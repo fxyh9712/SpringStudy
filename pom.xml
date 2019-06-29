@@ -15,6 +15,7 @@
         <module>SpringIOC03</module>
         <module>SpringIOC04</module>
         <module>SpringIOC5</module>
+        <module>SpringIOC06</module>
     </modules>
     <properties>
         <spring.version>4.3.21.RELEASE</spring.version>

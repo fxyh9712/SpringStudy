@@ -1,5 +1,7 @@
 package com.fxyh.bean;
 
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -7,6 +9,7 @@ import javax.annotation.PreDestroy;
 import java.io.Serializable;
 
 @Component
+@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class InitDemoByAnnotation implements Serializable {
     private static final long serialVersionUID = -6995664151240989094L;
 
