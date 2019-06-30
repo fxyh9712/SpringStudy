@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byType">
+
+    <bean id="userService" class="com.fxyh.spring.service.impl.UserServiceImpl" autowire="byName"/>
+
+    <bean id="userDao111111" class="com.fxyh.spring.dao.impl.UserDaoMyBatisImpl"/>
+    <bean id="userDao" class="com.fxyh.spring.dao.impl.UserDaoHibernateImpl"/>
+</beans>
