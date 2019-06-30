@@ -7,6 +7,7 @@ public class User implements Serializable {
 
     private String username;
     private String password;
+    private Department department;
 
     public User() {
     }
@@ -14,6 +15,12 @@ public class User implements Serializable {
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public User(String username, String password, Department department) {
+        this.username = username;
+        this.password = password;
+        this.department = department;
     }
 
     public String getUsername() {
@@ -32,11 +39,20 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", department=" + department +
                 '}';
     }
 }

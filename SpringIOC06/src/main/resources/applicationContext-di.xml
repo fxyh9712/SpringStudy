@@ -6,6 +6,67 @@
     <bean id="user" class="com.fxyh.spring.di.User">
         <constructor-arg index="0" value="zhangsan"/>
         <constructor-arg index="1" value="123456"/>
+        <!--ref方式-->
+        <!--<constructor-arg index="2" ref="department"/>-->
+        <constructor-arg index="2">
+            <!--内部bean方式-->
+            <bean class="com.fxyh.spring.di.Department">
+                <constructor-arg index="0" value="2"/>
+                <constructor-arg index="1" value="Ali"/>
+                <constructor-arg index="2" value="hangzhou"/>
+            </bean>
+        </constructor-arg>
     </bean>
+
+    <bean id="department" class="com.fxyh.spring.di.Department">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="Baidu"/>
+        <constructor-arg index="2" value="shengzhen"/>
+    </bean>
+
+    <bean id="collectionDemo" class="com.fxyh.spring.di.CollectionDemo">
+        <property name="arrayValue">
+            <array>
+                <value>zhangsan</value>
+                <value>lisi</value>
+                <value>wangwu</value>
+            </array>
+        </property>
+        <property name="listValue">
+            <list>
+                <value>beijin</value>
+                <value>shanghai</value>
+                <value>hangzhou</value>
+                <value>shenzhen</value>
+            </list>
+        </property>
+        <property name="setValue">
+            <set>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+                <value>ddd</value>
+            </set>
+        </property>
+        <property name="mapValue">
+            <map>
+                <entry key="key1" value="111"/>
+                <entry key="key2">
+                    <value type="java.lang.Integer">222</value>
+                </entry>
+                <entry key="key3" value="333"/>
+                <entry key="key4" value="444"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="driverClassName">com.mysql.jdbc.Driver</prop>
+                <prop key="url">jdbc:mysql:///fxyh</prop>
+                <prop key="username">root</prop>
+                <prop key="password">root</prop>
+            </props>
+        </property>
+    </bean>
+
 
 </beans>

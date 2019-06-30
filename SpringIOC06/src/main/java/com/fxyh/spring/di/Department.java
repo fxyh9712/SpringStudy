@@ -10,7 +10,16 @@ public class Department implements Serializable {
 
     private String departmentName;
 
-    private Date createDate;
+    private String address;
+
+    public Department() {
+    }
+
+    public Department(Integer id, String departmentName, String address) {
+        this.id = id;
+        this.departmentName = departmentName;
+        this.address = address;
+    }
 
     public Integer getId() {
         return id;
@@ -28,11 +37,20 @@ public class Department implements Serializable {
         this.departmentName = departmentName;
     }
 
-    public Date getCreateDate() {
-        return createDate;
+    public String getAddress() {
+        return address;
     }
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "id=" + id +
+                ", departmentName='" + departmentName + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
