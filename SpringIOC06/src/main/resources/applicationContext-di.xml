@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-autowire="byType">
 
     <bean id="user" class="com.fxyh.spring.di.User">
         <constructor-arg index="0" value="zhangsan"/>
@@ -68,5 +69,49 @@
         </property>
     </bean>
 
+    <bean id="abstractDemo" abstract="true">
+        <property name="id" value="1"/>
+        <property name="username" value="zhangsan"/>
+    </bean>
+    <bean id="abstractDemo1" class="com.fxyh.spring.di.AbstractDemo1" parent="abstractDemo">
+        <property name="password" value="123456"/>
+    </bean>
+    <bean id="abstractDemo2" class="com.fxyh.spring.di.AbstractDemo2" parent="abstractDemo">
+        <property name="age" value="22"/>
+    </bean>
+    <bean id="abstractDemo3" class="com.fxyh.spring.di.AbstractDemo3" parent="abstractDemo">
+        <property name="address" value="jiangxi"/>
+        <property name="id" value="2"/>
+    </bean>
 
+    <bean id="person" class="com.fxyh.spring.di.Person">
+        <property name="id" value="1"/>
+        <property name="username" value="zhangsan"/>
+        <property name="salary" value="#{10*new java.util.Random().nextInt(10)}"/>
+        <property name="createDate" value="2019-06-30"/>
+        <!--<property name="createDate" value="#{new java.util.Date()}"/>-->
+    </bean>
+
+    <!--<bean id="customEditorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <entry key="java.util.Date" value="com.fxyh.spring.di.CustomDatePropertyEditor"/>
+            </map>
+        </property>
+    </bean>-->
+    
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.fxyh.spring.di.CustomDateConverter">
+                    <property name="parsePatterns">
+                        <array>
+                            <value>yyyy-MM-dd</value>
+                            <value>yyyy/MM/dd</value>
+                        </array>
+                    </property>
+                </bean>
+            </set>
+        </property>
+    </bean>
 </beans>
