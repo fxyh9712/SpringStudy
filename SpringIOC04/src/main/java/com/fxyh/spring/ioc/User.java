@@ -1,4 +1,4 @@
-package com.fxyh.ioc;
+package com.fxyh.spring.ioc;
 
 import java.io.Serializable;
 

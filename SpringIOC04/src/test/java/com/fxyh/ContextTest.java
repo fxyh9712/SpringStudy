@@ -1,19 +1,16 @@
 package com.fxyh;
 
 
-import com.fxyh.ioc.Department;
-import com.fxyh.ioc.User;
+import com.fxyh.spring.ioc.Department;
+import com.fxyh.spring.ioc.User;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
-import javax.xml.bind.annotation.XmlAccessOrder;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLDecoder;
 
