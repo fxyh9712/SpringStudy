@@ -6,6 +6,7 @@ import com.fxyh.spring.ioc.User;
 import com.fxyh.spring.processor.UserPostProcessor;
 import com.fxyh.spring.service.UserService;
 import com.fxyh.spring.service.impl.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -16,10 +17,14 @@ import org.springframework.context.annotation.Scope;
 @ComponentScan(value = "com.fxyh.spring")
 public class AppConfig {
 
+    @Value("${username}")
+    private String username;
+
     @Bean()
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public User user(){
         User user = new User();
+        System.out.println(username);
         user.setUsername("zhangsan");
         user.setPassword("123456");
         user.setAge(22);
