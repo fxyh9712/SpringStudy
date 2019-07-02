@@ -31,7 +31,7 @@ public class ContextTest {
 
     private Department department;
 
-    @Before
+//    @Before
     public void setUp() throws Exception {
 //        this.context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
 //        this.context = new ClassPathXmlApplicationContext("classpath:applicationContext-user.xml", "classpath:applicationContext-department.xml");
@@ -45,7 +45,7 @@ public class ContextTest {
         this.department = (Department) this.context.getBean("department");
     }
 
-//    @Before
+    @Before
     public void setUpOld(){
         this.factory = new XmlBeanFactory(new ClassPathResource("applicationContextImport.xml"));
         this.user = this.factory.getBean(User.class);
