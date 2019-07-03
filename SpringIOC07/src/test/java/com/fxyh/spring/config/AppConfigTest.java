@@ -1,5 +1,6 @@
 package com.fxyh.spring.config;
 
+import com.fxyh.ImportXMLDemo;
 import com.fxyh.spring.ioc.Department;
 import com.fxyh.spring.ioc.User;
 import com.fxyh.spring.service.UserService;
@@ -31,6 +32,8 @@ public class AppConfigTest {
     @Test
     public void test() {
         System.out.println(department);
+        ImportXMLDemo bean = this.context.getBean(ImportXMLDemo.class);
+        System.out.println(bean);
         String[] beanDefinitionNames = this.context.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
             System.out.println("beanName:" + beanDefinitionName);

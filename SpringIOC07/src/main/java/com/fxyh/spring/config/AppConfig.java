@@ -13,17 +13,18 @@ import org.springframework.context.annotation.*;
 @Configuration
 @ComponentScan(value = "com.fxyh.spring")
 @Import(value = {com.fxyh.spring.ioc.Department.class})
-//@PropertySource(value = "classpath*:config.properties")
+@PropertySource(value = "classpath:config.properties")
+@ImportResource(value = {"classpath*:applicationContext-*.xml"})
 public class AppConfig {
 
-//    @Value("${username}")
+    @Value("${username}")
     private String username;
 
     @Bean()
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public User user(){
         User user = new User();
-//        System.out.println(username);
+        System.out.println(username);
         user.setUsername("zhangsan");
         user.setPassword("123456");
         user.setAge(22);
