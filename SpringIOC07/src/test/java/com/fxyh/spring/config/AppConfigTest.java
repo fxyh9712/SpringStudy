@@ -20,8 +20,8 @@ public class AppConfigTest {
 
     @Before
     public void setUp() {
-        this.context = new AnnotationConfigApplicationContext(AppConfig.class);
-//        this.context = new AnnotationConfigApplicationContext("com.fxyh.spring.config");
+//        this.context = new AnnotationConfigApplicationContext(AppConfig.class);
+        this.context = new AnnotationConfigApplicationContext("com.fxyh.spring.config");
 //        this.context = new ClassPathXmlApplicationContext("classpath*:applicationContext-bean.xml");
         this.user = this.context.getBean(User.class);
         this.user2 = this.context.getBean(User.class);

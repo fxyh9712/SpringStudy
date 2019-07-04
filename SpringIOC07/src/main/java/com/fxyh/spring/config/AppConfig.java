@@ -3,7 +3,6 @@ package com.fxyh.spring.config;
 import com.fxyh.spring.dao.UserDao;
 import com.fxyh.spring.dao.impl.UserDaoImpl;
 import com.fxyh.spring.ioc.User;
-import com.fxyh.spring.processor.UserPostProcessor;
 import com.fxyh.spring.service.UserService;
 import com.fxyh.spring.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,7 +12,7 @@ import org.springframework.context.annotation.*;
 @Configuration
 @ComponentScan(value = "com.fxyh.spring")
 @Import(value = {com.fxyh.spring.ioc.Department.class})
-@PropertySource(value = "classpath:config.properties")
+@PropertySources(value = {@PropertySource(value = {"classpath:config.properties", "classpath:jdbc.properties"})})
 @ImportResource(value = {"classpath*:applicationContext-*.xml"})
 public class AppConfig {
 
@@ -22,7 +21,7 @@ public class AppConfig {
 
     @Bean()
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
-    public User user(){
+    public User user() {
         User user = new User();
         System.out.println(username);
         user.setUsername("zhangsan");
@@ -32,14 +31,14 @@ public class AppConfig {
     }
 
     @Bean
-    public UserService userService(){
+    public UserService userService() {
         UserServiceImpl userService = new UserServiceImpl();
         userService.setUserDao(userDao());
         return userService;
     }
 
     @Bean
-    public UserDao userDao(){
+    public UserDao userDao() {
         UserDaoImpl userDao = new UserDaoImpl();
         return userDao;
     }
