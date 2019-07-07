@@ -1,34 +1,28 @@
 package com.fxyh.spring.proxy;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
+import org.springframework.cglib.proxy.Enhancer;
+import org.springframework.cglib.proxy.InvocationHandler;
 
-public class TransactionHandlerWithJDKDynamicProxy implements InvocationHandler {
+import java.lang.reflect.Method;
+
+public class TransactionHandlerWithCGlibDynamicProxy implements InvocationHandler {
 
     private Object targetObject;
 
-    public TransactionHandlerWithJDKDynamicProxy() {
+    public TransactionHandlerWithCGlibDynamicProxy() {
     }
 
-    public TransactionHandlerWithJDKDynamicProxy(Object targetObject) {
+    public TransactionHandlerWithCGlibDynamicProxy(Object targetObject) {
         this.targetObject = targetObject;
     }
 
     public Object createProxyInstance(){
-        return Proxy.newProxyInstance(this.targetObject.getClass().getClassLoader(),
-                this.targetObject.getClass().getInterfaces(),
-                this);
+        Enhancer enhancer = new Enhancer();
+        enhancer.setSuperclass(this.targetObject.getClass());
+        enhancer.setCallback(this);
+        return enhancer.create();
     }
 
-    /**
-     *
-     * @param proxy     代理对象
-     * @param method    目标对象的方法
-     * @param args      方法的参数
-     * @return
-     * @throws Throwable
-     */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         Object returnObj;
@@ -50,10 +44,10 @@ public class TransactionHandlerWithJDKDynamicProxy implements InvocationHandler 
     }
 
     private void endTransaction() {
-        System.out.println("JDK关闭事务！");
+        System.out.println("CGlib关闭事务！");
     }
 
     private void beginTransaction() {
-        System.out.println("JDK开启事务！");
+        System.out.println("CGlib开启事务！");
     }
 }

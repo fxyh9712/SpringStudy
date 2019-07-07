@@ -10,7 +10,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>SpringIOC01</module>
-        <module>SpringAOP</module>
         <module>SpringIOC02</module>
         <module>SpringIOC03</module>
         <module>SpringIOC04</module>
