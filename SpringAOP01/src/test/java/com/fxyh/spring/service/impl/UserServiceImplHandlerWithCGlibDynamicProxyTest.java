@@ -15,7 +15,7 @@ public class UserServiceImplHandlerWithCGlibDynamicProxyTest {
     private TransactionHandlerWithCGlibDynamicProxy transactionHandlerWithCGlibDynamicProxy;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         this.transactionHandlerWithCGlibDynamicProxy = new TransactionHandlerWithCGlibDynamicProxy(new UserServiceImplHandlerWithCGlibDynamicProxy());
         this.userService = (UserService) this.transactionHandlerWithCGlibDynamicProxy.createProxyInstance();
     }

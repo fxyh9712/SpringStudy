@@ -26,8 +26,6 @@ public class TransactionHandlerWithJDKDynamicProxy implements InvocationHandler 
      * @param proxy     代理对象
      * @param method    目标对象的方法
      * @param args      方法的参数
-     * @return
-     * @throws Throwable
      */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
