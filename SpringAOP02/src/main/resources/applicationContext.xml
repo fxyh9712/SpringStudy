@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="userService" class="com.fxyh.spring.service.impl.UserServiceImpl"/>
+
+    <bean id="transactionHandler" class="com.fxyh.spring.handler.TransactionHandler"/>
+
+    <bean id="proxyFactoryBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="interfaces">
+            <array>
+                <value>com.fxyh.spring.service.UserService</value>
+            </array>
+        </property>
+        <property name="interceptorNames">
+            <array>
+                <value>transactionHandler</value>
+            </array>
+        </property>
+        <property name="targetName" value="userService"/>
+    </bean>
+
+</beans>
