@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 映射处理器 -->
+    <bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <bean id="simpleUrlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/abc.action">handlerMappingController</prop>
+                <prop key="/handlerMapping.action">handlerMappingController</prop>
+            </props>
+        </property>
+        <!--<property name="order" value="1"/>-->
+    </bean>
+    <!-- 映射适配器 -->
+    <bean id="handlerAdapter1" class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    <bean id="handlerAdapter2" class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"/>
+    <!-- 视图解析器 -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 后端控制器 -->
+    <bean id="helloController" name="/hello.action" class="com.fxyh.springmvc.web.HelloController"/>
+    <bean id="handlerMappingController" name="/handlerMapping.action" class="com.fxyh.springmvc.web.HandlerMappingController"/>
+    <bean id="handlerAdapterController" name="/handlerAdapter.action" class="com.fxyh.springmvc.web.HandlerAdapterController"/>
+    <bean id="forwardController" name="/forward.action" class="com.fxyh.springmvc.web.ForwardController"/>
+    <bean id="redirectController" name="/redirect.action" class="com.fxyh.springmvc.web.RedirectController"/>
+    <bean id="redirectResultController" name="/redirectResult.action" class="com.fxyh.springmvc.web.RedirectResultController"/>
+</beans>
