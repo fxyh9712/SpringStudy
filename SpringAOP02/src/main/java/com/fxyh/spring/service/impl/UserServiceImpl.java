@@ -10,7 +10,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void saveUser(User user) {
         System.out.println("save:" + user);
-        throw new CustomException("你出错了");
+//        throw new CustomException("你出错了");
     }
 
     @Override
