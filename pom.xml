@@ -21,9 +21,25 @@
         <module>SpringJDBC01</module>
         <module>SpringMVC01</module>
         <module>SpringMVC02</module>
+        <module>SpringMVC03</module>
     </modules>
     <properties>
         <spring.version>4.3.21.RELEASE</spring.version>
     </properties>
 
+    <!--<repositories>
+        <repository>
+            <id>maven-ali</id>
+            <url>ttp://maven.aliyun.com/nexus/content/repositories/central/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+
+    </repositories>-->
 </project>
