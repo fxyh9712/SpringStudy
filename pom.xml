@@ -20,6 +20,7 @@
         <module>SpringAOP02</module>
         <module>SpringJDBC01</module>
         <module>SpringMVC01</module>
+        <module>SpringMVC02</module>
     </modules>
     <properties>
         <spring.version>4.3.21.RELEASE</spring.version>
