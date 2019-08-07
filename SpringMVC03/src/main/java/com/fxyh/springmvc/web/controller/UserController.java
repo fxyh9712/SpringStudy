@@ -5,6 +5,7 @@ import com.fxyh.springmvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -33,6 +34,25 @@ public class UserController {
         List<User> userList = userService.findAllUserList();
         model.addAttribute("userList", userList);
         return "user/list";
+    }
+
+    @RequestMapping("/{id}/delete")
+    public String delete(@PathVariable Integer id){
+        userService.deleteUser(id);
+        return "redirect:/user/findAll";
+    }
+
+    @RequestMapping(value = "/{id}/update", method = RequestMethod.GET)
+    public String update(@PathVariable Integer id, Model model){
+        User user = userService.findUserById(id);
+        model.addAttribute("user", user);
+        return "user/update";
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String update(User user){
+        this.userService.updateUser(user);
+        return "redirect:/user/findAll";
     }
 
 }
