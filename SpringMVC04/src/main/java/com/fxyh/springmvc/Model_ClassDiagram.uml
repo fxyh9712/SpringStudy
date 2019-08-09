@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="101.0" y="152.0">org.springframework.ui.ModelMap</node>
+    <node x="83.5" y="76.0">java.util.LinkedHashMap</node>
+    <node x="0.0" y="152.0">org.springframework.ui.Model</node>
+    <node x="118.5" y="0.0">java.util.Map</node>
+    <node x="17.25" y="228.0">org.springframework.ui.ExtendedModelMap</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.springframework.ui.ExtendedModelMap" target="org.springframework.ui.ModelMap">
+      <point x="39.5" y="-13.0" />
+      <point x="135.75" y="203.0" />
+      <point x="152.0" y="203.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="org.springframework.ui.ModelMap" target="java.util.LinkedHashMap">
+      <point x="0.0" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="java.util.LinkedHashMap" target="java.util.Map">
+      <point x="0.0" y="-13.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="org.springframework.ui.ExtendedModelMap" target="org.springframework.ui.Model">
+      <point x="-39.5" y="-13.0" />
+      <point x="56.75" y="203.0" />
+      <point x="40.5" y="203.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="419.0" y="140.5" />
+  <SelectedNodes>
+    <node>java.util.LinkedHashMap</node>
+    <node>org.springframework.ui.Model</node>
+    <node>java.util.Map</node>
+    <node>org.springframework.ui.ExtendedModelMap</node>
+    <node>org.springframework.ui.ModelMap</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
